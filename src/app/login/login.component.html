@@ -1,0 +1,39 @@
+<div class="s">
+<mat-card class="matcard">
+
+
+<mat-card-title >Login</mat-card-title>
+ <mat-progress-bar mode="determinate" value="100"></mat-progress-bar>
+<br>
+<form (submit)="onLogin(loginForm)" #loginForm="ngForm">
+  <mat-form-field appearance="fill" class="form-group">
+    <mat-label class="fontsize">Email</mat-label>
+    <input matInput class="fontsizes"  name="email" ngModel  id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email" required email #emailInput ="ngModel">
+     <!-- <span *ngIf="emailInput.invalid">please enter valid email</span>-->
+  </mat-form-field>
+
+
+
+  <mat-form-field appearance="fill" class="form-group">
+    <mat-label class="fontsize">Enter your password</mat-label>
+    <input matInput  class="fontsizes" [type]="hide ? 'password' : 'text'"  name="password" ngModel id="exampleInputPassword1" placeholder="Password" #passwordInput="ngModel" >
+    <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+    <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+    </button>
+  </mat-form-field>
+ <button  type="submit" mat-raised-button color="accent">Submit</button>
+  <button   mat-raised-button color="primary" routerLink="/signup" style="margin-left:2px;">SignUp</button>
+
+</form>
+<br>
+ <a   href="http://localhost:3000/index" style="margin-left:2px;">Forgot Password ?</a>
+<br>
+
+<!-- <mat-chip-list>
+
+  <mat-chip color="primary" selected>fb</mat-chip>
+
+</mat-chip-list>-->
+
+</mat-card>
+</div>
